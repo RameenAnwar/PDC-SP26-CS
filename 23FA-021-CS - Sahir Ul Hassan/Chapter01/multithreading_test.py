@@ -5,7 +5,7 @@ import threading
 if __name__ == "__main__":
     start_time = time.time()
     size = 10000000
-    threads = 10  
+    threads = 10
     jobs = []
     for i in range(0, threads):
         out_list = list()
@@ -14,11 +14,9 @@ if __name__ == "__main__":
     for j in jobs:
         j.start()
 
-    
     for j in jobs:
         j.join()
 
-    print ("List processing complete.")
+    print("List processing complete.")
     end_time = time.time()
     print("multithreading time=", end_time - start_time)
-	

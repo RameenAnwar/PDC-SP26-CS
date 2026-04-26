@@ -2,7 +2,7 @@ import logging
 import threading
 import time
 
-LOG_FORMAT = '%(asctime)s %(threadName)-17s %(levelname)-8s %(message)s'
+LOG_FORMAT = "%(asctime)s %(threadName)-17s %(levelname)-8s %(message)s"
 logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
 
 items = []
@@ -14,15 +14,13 @@ class Consumer(threading.Thread):
         super().__init__(*args, **kwargs)
 
     def consume(self):
-
         with condition:
-
             if len(items) == 0:
-                logging.info('no items to consume')
+                logging.info("no items to consume")
                 condition.wait()
 
             items.pop()
-            logging.info('consumed 1 item')
+            logging.info("consumed 1 item")
 
             condition.notify()
 
@@ -39,13 +37,12 @@ class Producer(threading.Thread):
     def produce(self):
 
         with condition:
-
             if len(items) == 10:
-                logging.info('items produced {}. Stopped'.format(len(items)))
+                logging.info("items produced {}. Stopped".format(len(items)))
                 condition.wait()
 
             items.append(1)
-            logging.info('total items {}'.format(len(items)))
+            logging.info("total items {}".format(len(items)))
 
             condition.notify()
 
@@ -56,8 +53,8 @@ class Producer(threading.Thread):
 
 
 def main():
-    producer = Producer(name='Producer')
-    consumer = Consumer(name='Consumer')
+    producer = Producer(name="Producer")
+    consumer = Consumer(name="Consumer")
 
     producer.start()
     consumer.start()

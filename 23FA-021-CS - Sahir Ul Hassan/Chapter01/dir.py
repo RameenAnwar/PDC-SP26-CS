@@ -1,6 +1,6 @@
-# In this program, 
+# In this program,
 # we check if the number is positive or
-# negative or zero and 
+# negative or zero and
 # display an appropriate message
 
 num = 1
@@ -17,7 +17,6 @@ else:
     print("Negative number")
 
 
-
 # Program to find the sum of all numbers stored in a list
 
 # List of numbers
@@ -28,8 +27,7 @@ sum = 0
 
 # iterate over the list
 for val in numbers:
-	sum = sum+val
+    sum = sum + val
 
 # Output: The sum is 48
 print("The sum is", sum)
-

@@ -1,4 +1,4 @@
-""""Thread synchronisation with queue"""
+""" "Thread synchronisation with queue"""
 
 from threading import Thread
 from queue import Queue
@@ -7,7 +7,6 @@ import random
 
 
 class Producer(Thread):
-
     def __init__(self, queue):
         Thread.__init__(self)
         self.queue = queue
@@ -16,13 +15,14 @@ class Producer(Thread):
         for i in range(5):
             item = random.randint(0, 256)
             self.queue.put(item)
-            print('Producer notify : item N°%d appended to queue by %s\n'\
-                  % (item, self.name))
+            print(
+                "Producer notify : item N°%d appended to queue by %s\n"
+                % (item, self.name)
+            )
             time.sleep(1)
 
 
 class Consumer(Thread):
-
     def __init__(self, queue):
         Thread.__init__(self)
         self.queue = queue
@@ -30,11 +30,11 @@ class Consumer(Thread):
     def run(self):
         while True:
             item = self.queue.get()
-            print('Consumer notify : %d popped from queue by %s'\
-                  % (item, self.name))
+            print("Consumer notify : %d popped from queue by %s" % (item, self.name))
             self.queue.task_done()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     queue = Queue()
 
     t1 = Producer(queue)

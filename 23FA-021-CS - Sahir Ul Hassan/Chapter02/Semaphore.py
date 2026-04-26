@@ -3,7 +3,7 @@ import threading
 import time
 import random
 
-LOG_FORMAT = '%(asctime)s %(threadName)-17s %(levelname)-8s %(message)s'
+LOG_FORMAT = "%(asctime)s %(threadName)-17s %(levelname)-8s %(message)s"
 logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
 
 
@@ -12,16 +12,16 @@ item = 0
 
 
 def consumer():
-    logging.info('Consumer is waiting')
+    logging.info("Consumer is waiting")
     semaphore.acquire()
-    logging.info('Consumer notify: item number {}'.format(item))
+    logging.info("Consumer notify: item number {}".format(item))
 
 
 def producer():
     global item
     time.sleep(3)
     item = random.randint(0, 1000)
-    logging.info('Producer notify: item number {}'.format(item))
+    logging.info("Producer notify: item number {}".format(item))
     semaphore.release()
 
 

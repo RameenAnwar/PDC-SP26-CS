@@ -2,7 +2,7 @@ import threading
 
 
 def my_func(thread_number):
-    return print('my_func called by thread N°{}'.format(thread_number))
+    return print("my_func called by thread N°{}".format(thread_number))
 
 
 def main():
@@ -12,6 +12,7 @@ def main():
         threads.append(t)
         t.start()
         t.join()
+
 
 if __name__ == "__main__":
     main()

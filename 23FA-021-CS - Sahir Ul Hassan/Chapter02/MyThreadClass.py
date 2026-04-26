@@ -3,32 +3,38 @@ import os
 from random import randint
 from threading import Thread
 
-class MyThreadClass (Thread):
-   def __init__(self, name, duration):
-      Thread.__init__(self)
-      self.name = name
-      self.duration = duration
-   def run(self):
-      print ("---> " + self.name + \
-             " running, belonging to process ID "\
-             + str(os.getpid()) + "\n")
-      time.sleep(self.duration)
-      print ("---> " + self.name + " over\n")
+
+class MyThreadClass(Thread):
+    def __init__(self, name, duration):
+        Thread.__init__(self)
+        self.name = name
+        self.duration = duration
+
+    def run(self):
+        print(
+            "---> "
+            + self.name
+            + " running, belonging to process ID "
+            + str(os.getpid())
+            + "\n"
+        )
+        time.sleep(self.duration)
+        print("---> " + self.name + " over\n")
 
 
 def main():
     start_time = time.time()
-    
+
     # Thread Creation
-    thread1 = MyThreadClass("Thread#1 ", randint(1,10))
-    thread2 = MyThreadClass("Thread#2 ", randint(1,10))
-    thread3 = MyThreadClass("Thread#3 ", randint(1,10))
-    thread4 = MyThreadClass("Thread#4 ", randint(1,10))
-    thread5 = MyThreadClass("Thread#5 ", randint(1,10))
-    thread6 = MyThreadClass("Thread#6 ", randint(1,10))
-    thread7 = MyThreadClass("Thread#7 ", randint(1,10))
-    thread8 = MyThreadClass("Thread#8 ", randint(1,10))
-    thread9 = MyThreadClass("Thread#9 ", randint(1,10))
+    thread1 = MyThreadClass("Thread#1 ", randint(1, 10))
+    thread2 = MyThreadClass("Thread#2 ", randint(1, 10))
+    thread3 = MyThreadClass("Thread#3 ", randint(1, 10))
+    thread4 = MyThreadClass("Thread#4 ", randint(1, 10))
+    thread5 = MyThreadClass("Thread#5 ", randint(1, 10))
+    thread6 = MyThreadClass("Thread#6 ", randint(1, 10))
+    thread7 = MyThreadClass("Thread#7 ", randint(1, 10))
+    thread8 = MyThreadClass("Thread#8 ", randint(1, 10))
+    thread9 = MyThreadClass("Thread#9 ", randint(1, 10))
 
     # Thread Running
     thread1.start()
@@ -52,10 +58,10 @@ def main():
     thread8.join()
     thread9.join()
 
-    # End 
+    # End
     print("End")
 
-    #Execution Time
+    # Execution Time
     print("--- %s seconds ---" % (time.time() - start_time))
 
 

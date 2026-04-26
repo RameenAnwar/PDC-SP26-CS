@@ -20,6 +20,7 @@ class Box:
         with self.lock:
             self.execute(-1)
 
+
 def adder(box, items):
     print("N° {} items to ADD \n".format(items))
     while items:
@@ -27,7 +28,6 @@ def adder(box, items):
         time.sleep(1)
         items -= 1
         print("ADDED one item -->{} item to ADD \n".format(items))
-
 
 
 def remover(box, items):
@@ -43,18 +43,15 @@ def main():
     items = 10
     box = Box()
 
-    t1 = threading.Thread(target=adder, \
-                          args=(box, random.randint(10,20)))
-    t2 = threading.Thread(target=remover, \
-                          args=(box, random.randint(1,10)))
-    
+    t1 = threading.Thread(target=adder, args=(box, random.randint(10, 20)))
+    t2 = threading.Thread(target=remover, args=(box, random.randint(1, 10)))
+
     t1.start()
     t2.start()
 
-
     t1.join()
     t2.join()
-    
+
 
 if __name__ == "__main__":
     main()

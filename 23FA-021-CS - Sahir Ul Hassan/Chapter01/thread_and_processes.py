@@ -3,14 +3,17 @@ import time
 import threading
 import multiprocessing
 import random
- 
+
 NUM_WORKERS = 10
 size = 10000000
 out_list = list()
 
+
 def do_something(count, out_list):
-	for i in range(count):
-		out_list.append(random.random())
+    for i in range(count):
+        out_list.append(random.random())
+
+
 """
 #Serial
 start_time = time.time()
@@ -20,7 +23,7 @@ end_time = time.time()
 print("Serial time=", end_time - start_time)
 """
 
-#MultiThreading
+# MultiThreading
 start_time = time.time()
 jobs = []
 for i in range(0, NUM_WORKERS):
@@ -28,21 +31,20 @@ for i in range(0, NUM_WORKERS):
     jobs.append(thread)
 for j in jobs:
     j.start()
-    
+
 for j in jobs:
     j.join()
 
-print ("List processing complete.")
+print("List processing complete.")
 end_time = time.time()
 print("threading time=", end_time - start_time)
 
 
-#MultiProcesses
+# MultiProcesses
 start_time = time.time()
 jobs = []
 for i in range(0, NUM_WORKERS):
-    process = multiprocessing.Process\
-              (target=do_something,args=(size,out_list))
+    process = multiprocessing.Process(target=do_something, args=(size, out_list))
     jobs.append(process)
 
 for j in jobs:
@@ -51,6 +53,6 @@ for j in jobs:
 for j in jobs:
     j.join()
 
-print ("List processing complete.")
+print("List processing complete.")
 end_time = time.time()
 print("processes time=", end_time - start_time)
