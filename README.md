@@ -35,3 +35,16 @@
 - Barrier Synchronization in Multiprocessing
 - Communication using Queue in Multiprocessing
 - Communication using Pipe in Multiprocessing
+
+### Chapter03
+
+**Contents**
+- Message Passing (MPI)
+- Point-to-Point Communication 
+- All-to-All Communication
+- Broadcast Communication
+- Scatter Communication
+- Gather Communication
+- Reduce Communication
+- Deadlock in MPI
+- Virtual Topology (Cartesian Grid)
