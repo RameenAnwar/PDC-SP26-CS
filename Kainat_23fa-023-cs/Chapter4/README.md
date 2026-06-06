@@ -143,7 +143,7 @@ Important concepts in this program:
 
 Scatter communication divides data from one root process and distributes it across multiple processes. Each process works on its own portion of data, enabling parallel processing.
 
-## virtualTopology
+## irtualTopology
 
 This program demonstrates the creation of a Cartesian grid topology using MPI in Python (mpi4py).
 
