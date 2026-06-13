@@ -4,7 +4,7 @@ host=socket.gethostname()
 port=60000
 s.connect((host,port))
 s.send('HelloServer!'.encode())
-with open('received.txt','wb') as f:
+with open('received.txt', 'wb') as f:
     print ('file opened')
     while True :
         print ('receiving data...')

@@ -8,7 +8,7 @@ next_server = "3"
 servername = "example.chainTopology." + current_server
 
 daemon = Pyro4.core.Daemon()
-obj = chainTopology.Chain(current_server,next_server)
+obj = chainTopology.Chain(current_server, next_server)
 uri = daemon.register(obj)
 ns = Pyro4.locateNS()
 ns.register(servername, uri)
