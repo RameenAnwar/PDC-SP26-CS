@@ -12,7 +12,7 @@ while True :
     print ('Got connection from',addr)
     data=conn.recv(1024)
     print ('Server received',repr(data.decode()))
-    filename= 'mytext.txt'
+    filename='mytext.txt'
     f =open(filename,'rb')
     l =f.read(1024)
     while (l):
