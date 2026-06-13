@@ -1,0 +1,236 @@
+## Chapter03: Process Based Parallelism in Python
+
+## 1 communicating_with_pipe.py
+What I learned
+In this program, 2 processes share data using a pipe. One process generates numbers, and the other receives them and calculates their square.
+
+How to run
+python communicating_with_pipe.py
+
+Use
+IPC (inter-process communication)
+
+When use
+When two processes need direct data exchange
+
+Summary
+Pipe-based process communication
+
+Advantages
+Fast communication
+Simple method
+
+Disadvantages
+Best mainly for 2 processes
+
+## 2 communicating_with_queue.py
+What I learned
+
+Producer-consumer model is used. Processes share data safely using a queue.
+
+How to run
+python communicating_with_queue.py
+
+Use
+Safe data sharing between processes
+
+When use
+When multiple processes need to share data
+
+Summary
+Queue communication system
+
+Advantages
+Safe & reliable
+Easy to use
+
+Disadvantages
+Slower than pipe
+
+## 3 killing_processes.py
+What I learned
+Shows how to forcefully stop a process using terminate().
+How to run
+python killing_processes.py
+Use
+Stopping unwanted processes
+When use
+When process hangs or takes too long
+Summary
+Process termination concept
+Advantages
+Easy process control
+Disadvantages
+May cause data loss
+
+## 4 myFunc.py
+What I learned
+Simple reusable function that prints output based on process ID.
+How to run
+Imported in other files (not run directly)
+Use
+Helper function for multiprocessing
+When use
+When reusable logic is needed
+Summary
+Helper function file
+Advantages
+Reusable
+Simple
+Disadvantages
+Limited functionality
+
+## 5 naming_processes.py
+What I learned
+Processes are given custom names for identification.
+How to run
+python naming_processes.py
+Use
+Debugging and tracking processes
+When use
+When multiple processes need identification
+Summary
+Process naming system
+Advantages
+Easy debugging
+Disadvantages
+No synchronization feature
+
+## 6 process_in_subclass.py
+What I learned
+Processes are created using class inheritance from multiprocessing.Process.
+How to run
+python process_in_subclass.py
+Use
+OOP-style multiprocessing
+When use
+When structured code is needed
+Summary
+Class-based process creation
+Advantages
+Clean structure
+Reusable design
+Disadvantages
+Slightly complex
+
+## 7 process_pool.py
+What I learned
+Uses a process pool to run multiple tasks in parallel.
+How to run
+python process_pool.py
+Use
+Parallel execution of multiple tasks
+When use
+When same task runs on many inputs
+Summary
+Process pool system
+Advantages
+Fast execution
+Efficient
+Disadvantages
+Hard to manage sometimes
+
+## 8 processes_barrier.py
+What I learned
+Processes are synchronized using a barrier and wait for each other.
+How to run
+python processes_barrier.py
+Use
+Process synchronization
+When use
+When coordination is required
+Summary
+Barrier synchronization
+Advantages
+Proper coordination
+Disadvantages
+Fixed number of processes required
+
+## 9 run_background_processes_no_daemons.py
+What I learned
+Non-daemon processes run independently in the background.
+
+How to run
+
+python run_background_processes_no_daemons.py
+
+Use
+Long-running background tasks
+
+When use
+When independent execution is needed
+
+Summary
+Independent background processes
+
+Advantages
+Runs separately
+
+Disadvantages
+May continue after main program ends
+
+## 10 run_background_processes.py
+What I learned
+Daemon processes stop automatically when the main program ends.
+
+How to run
+python run_background_processes.py
+
+Use
+Light background tasks
+
+When use
+When auto-stop behavior is needed
+
+Summary
+Daemon process concept
+Advantages
+Auto terminates
+
+Disadvantages
+Not independent
+
+## 11 spawning_processes_namespace.py
+What I learned
+A process is created using functions imported from another file (modular approach).
+
+How to run
+python spawning_processes_namespace.py
+
+Use
+Modular multiprocessing
+
+When use
+Large structured projects
+
+Summary
+Modular process spawning
+
+Advantages
+Organized code
+
+Disadvantages
+Needs multiple files
+
+## 12 spawning_processes.py
+What I learned
+Basic process creation using multiprocessing.Process.
+
+How to run
+python spawning_processes.py
+
+Use
+Running tasks in parallel processes
+
+When use
+Simple multiprocessing needed
+
+Summary
+Basic process spawning
+
+Advantages
+Easy to implement
+Fast setup
+
+Disadvantages
+High memory usage
