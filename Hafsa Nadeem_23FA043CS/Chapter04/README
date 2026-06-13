@@ -1,0 +1,247 @@
+## Chapter 04 : MPI Programming in Python
+
+## 1 alltoall.py
+What I learned
+
+Is program me All-to-All communication hoti hai. Har process baaki sab processes ko data send karta hai aur sab se data receive bhi karta hai.
+
+How to execute
+mpiexec -n 4 python alltoall.py
+Use
+
+Distributed systems jahan sab processes ek dusre se data exchange karte hain
+
+When use
+
+Jab har process ko sab processes ke saath communication karni ho
+
+Summary
+
+MPI me all-to-all data exchange show karta hai
+
+Advantages
+
+Fast parallel communication
+Good for distributed systems
+
+Disadvantages
+
+High communication cost
+
+## 2 broadcast.py
+What I learned
+
+Is program me ek process apna data sab processes ko share karta hai.
+
+How to execute
+mpiexec -n 4 python broadcast.py
+Use
+
+Same data ko multiple processes tak pohanchana
+
+When use
+
+Jab ek process ka data sab ko chahiye ho
+
+Summary
+
+MPI broadcast operation
+
+Advantages
+
+Fast data sharing
+Simple method
+
+Disadvantages
+
+Sirf ek source process hota hai
+
+## 3 deadLockProblems.py
+What I learned
+
+Is program me deadlock situation samjhayi gayi hai jahan processes galat order me send/receive karte hain aur system freeze ho jata hai.
+
+How to execute
+mpiexec -n 6 python deadLockProblems.py
+Use
+
+MPI synchronization aur deadlock understanding
+
+When use
+
+Safe communication patterns seekhne ke liye
+
+Summary
+
+Deadlock problems explain karta hai
+
+Advantages
+
+Process synchronization samajh aati hai
+
+Disadvantages
+
+Galat sequence se program freeze ho sakta hai
+
+## 4 gather.py
+What I learned
+
+Is program me sab processes ka data ek root process me collect hota hai.
+
+How to execute
+mpiexec -n 4 python gather.py
+Use
+
+Multiple processes ka result collect karna
+
+When use
+
+Jab distributed results ko combine karna ho
+
+Summary
+
+MPI gather operation
+
+Advantages
+
+Efficient result collection
+
+Disadvantages
+
+Root process overload ho sakta hai
+
+## 5 helloWorld_MPI.py
+What I learned
+
+Basic MPI program jahan har process apna rank print karta hai.
+
+How to execute
+mpiexec -n 4 python helloWorld_MPI.py
+Use
+
+MPI basics samajhne ke liye
+
+When use
+
+Initialization aur process identification seekhne ke liye
+
+Summary
+
+Simple MPI hello world program
+
+Advantages
+
+Easy for beginners
+
+Disadvantages
+
+Communication nahi hoti
+
+## 6 pointToPointCommunication.py
+What I learned
+
+Is program me ek process directly dusre process ko data send karta hai aur receive karta hai.
+
+How to execute
+mpiexec -n 9 python pointToPointCommunication.py
+Use
+
+Direct process-to-process communication
+
+When use
+
+Jab specific processes ke darmiyan data exchange ho
+
+Summary
+
+Point-to-point communication in MPI
+
+Advantages
+
+Simple communication model
+
+Disadvantages
+
+Large systems me manage karna mushkil
+
+## 7 reduction.py
+What I learned
+
+Is program me sab processes ka data combine hota hai (jaise SUM operation).
+
+How to execute
+mpiexec -n 4 python reduction.py
+Use
+
+Parallel computation ka final result nikalna
+
+When use
+
+Jab sab processes ka output merge karna ho
+
+Summary
+
+MPI reduction operation
+
+Advantages
+
+Efficient aggregation
+
+Disadvantages
+
+Root dependency hoti hai
+
+## 8 scatter.py
+What I learned
+
+Is program me ek process data ko multiple processes me divide karke distribute karta hai.
+
+How to execute
+mpiexec -n 4 python scatter.py
+Use
+
+Workload distribution
+
+When use
+
+Large data ko parallel process karna ho
+
+Summary
+
+MPI scatter operation
+
+Advantages
+
+Efficient task distribution
+
+Disadvantages
+
+Proper data splitting zaroori hai
+
+## 9 virtualTopology.py
+What I learned
+
+Is program me processes ko grid (cartesian structure) me arrange kiya jata hai jahan neighbors define hote hain.
+
+How to execute
+mpiexec -n 4 python virtualTopology.py
+Use
+
+Scientific computing aur grid-based simulations
+
+When use
+
+Jab structured communication pattern chahiye ho
+
+Summary
+
+Virtual topology in MPI
+
+Advantages
+
+Organized communication
+Useful for simulations
+
+Disadvantages
+
+Beginners ke liye complex
